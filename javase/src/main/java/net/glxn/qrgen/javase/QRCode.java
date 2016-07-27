@@ -124,7 +124,7 @@ public class QRCode extends AbstractQRCode {
         File file;
         try {
             file = createTempFile();
-            MatrixToImageWriter.writeToPath(createMatrix(text), imageType.toString(), file.toPath(), matrixToImageConfig);
+            MatrixToImageWriter.writeToPath(createMatrix(text), imageType.toString(), file, matrixToImageConfig);
         } catch (Exception e) {
             throw new QRGenerationException("Failed to create QR image from text due to underlying exception", e);
         }
@@ -137,7 +137,7 @@ public class QRCode extends AbstractQRCode {
         File file;
         try {
             file = createTempFile(name);
-            MatrixToImageWriter.writeToPath(createMatrix(text), imageType.toString(), file.toPath(), matrixToImageConfig);
+            MatrixToImageWriter.writeToPath(createMatrix(text), imageType.toString(), file, matrixToImageConfig);
         } catch (Exception e) {
             throw new QRGenerationException("Failed to create QR image from text due to underlying exception", e);
         }

@@ -22,7 +22,7 @@ import java.util.HashMap;
  */
 public abstract class AbstractQRCode {
 
-    protected final HashMap<EncodeHintType, Object> hints = new HashMap<>();
+    protected final HashMap<EncodeHintType, Object> hints = new HashMap<EncodeHintType, Object>();
 
     protected Writer qrWriter;
 

@@ -1,5 +1,6 @@
 package net.glxn.qrgen.core.scheme;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
@@ -69,13 +70,21 @@ public class ExtendableQRCodeSchemeParser implements QRCodeSchemeParser {
 					.getResources("META-INF/qrcode.meta");
 			for (URL url : Collections.list(resources)) {
 				Properties properties = new Properties();
-				try (InputStream is = url.openStream()) {
+				InputStream is = null;
+				try  {
+					is = url.openStream();
 					properties.load(is);
 					String prop = properties
 							.getProperty(QRCodeSchemeParser.class.getName());
 					String[] parserNames = prop.split(",");
 					for (String className : parserNames) {
 						result.add(createParserInstance(className));
+					}
+				} catch (IOException e) {
+				      throw new RuntimeException(e);
+				} finally {
+					if (is != null) {
+						is.close();
 					}
 				}
 			}
