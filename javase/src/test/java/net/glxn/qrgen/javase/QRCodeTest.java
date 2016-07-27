@@ -17,7 +17,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.Map;
 
 public class QRCodeTest {
@@ -197,9 +196,7 @@ public class QRCodeTest {
     @Test
     public void shouldColorOutput() throws IOException {
         File file = QRCode.from("Hello World").withColor(0xFFFF0000, 0xFFFFFFAA).file();
-        File tempFile = File.createTempFile("qr_", ".png");
-        Files.copy(file.toPath(), new FileOutputStream(tempFile));
-        System.out.println(tempFile.getAbsoluteFile());
+        System.out.println(file.getAbsoluteFile());
     }
 
     @SuppressWarnings("unchecked")
