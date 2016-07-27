@@ -1,7 +1,10 @@
-[![Build Status](https://travis-ci.org/kenglxn/QRGen.png?branch=master)](https://travis-ci.org/kenglxn/QRGen)
-[![Release](https://img.shields.io/github/tag/kenglxn/QRGen.svg?label=JitPack)](https://jitpack.io/#kenglxn/QRGen)
+[![](https://jitpack.io/v/coplas/QRGen.svg)](https://jitpack.io/#coplas/QRGen)
 
-### QRGen: a simple QRCode generation api for java built on top ZXING
+
+### Java6 Backport
+
+### QRGen: a simple QRCode generation api for java built on top ZXING fork for Java6
+https://mvnrepository.com/artifact/com.solvoj.zxing-java6
 
 #### Dependencies:
 
@@ -49,7 +52,7 @@ Gradle:
 
 ```gradle
     dependencies {
-        compile 'com.github.kenglxn.QRGen:javase:2.2.0'
+        compile 'com.github.coplas.QRGen:javase:2.2.4'
     }
 ```
 
@@ -58,9 +61,9 @@ Maven:
 ```xml
     <dependencies>
         <dependency>
-            <groupId>com.github.kenglxn.qrgen</groupId>
+            <groupId>com.github.coplas.qrgen</groupId>
             <artifactId>javase</artifactId>
-            <version>2.2.0</version>
+            <version>2.2.4</version>
         </dependency>
     </dependencies>
 ```
